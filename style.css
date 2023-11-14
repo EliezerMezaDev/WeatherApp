@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Popoins", sans-serif;
+}
+
+.container-all {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+
+  background: linear-gradient(135deg, #00feba, #5b458a);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 540px;
+  margin: -10rem auto 0 auto;
+  padding: 1rem 1rem 3rem 1rem;
+
+  color: #f5f5f5;
+
+  background-color: #f5f5f528;
+  border: 1px solid #f5f5f55c;
+
+  border-radius: 1rem;
+}
+
+.app__searchbar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__searchbar input {
+  height: 50px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border: none;
+  border-radius: 10rem;
+
+  background-color: #f5f5f5a4;
+
+  outline: none;
+
+  flex: 1;
+}
+
+.app__searchbar input:focus {
+  background-color: #f5f5f5;
+}
+
+.app__searchbar button {
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 10rem;
+
+  background-color: #f5f5f5a4;
+
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__searchbar button:focus {
+  background-color: #f5f5f5;
+}
+
+.app__searchbar button img {
+  width: 20px;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather__icon {
+  width: 170px;
+  margin-top: 1rem;
+}
+
+.weather__temp {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.weather__city {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.weather__details {
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.weather__details .col {
+  display: flex;
+}
+
+.weather__details .col img {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+
+.weather__details .col label {
+  font-size: 2rem;
+}
