@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
 
+    <meta
+      name="description"
+      content="API and object handling practice in the DOM"
+    />
+    <meta name="keywords" content="APIs, Development practice" />
+    <meta name="author" content="Eliezer A Meza" />
+
     <link rel="stylesheet" href="styles/variables.css" />
     <link rel="stylesheet" href="styles/definitions.css" />
     <link rel="stylesheet" href="styles/main.css" />
@@ -24,7 +31,7 @@
         <nav class="navigation">
           <ul>
             <li>
-              <a href="/index.html">
+              <a href="/index.html" aria-label="navigate to index.html">
                 <i class="ri-home-2-fill icon"></i>
               </a>
             </li>
@@ -52,23 +59,27 @@
       <main class="section main">
         <article class="main__info">
           <h1 id="dataCity">City name</h1>
-          <h5 id="clock">10:23:46, 13/02/2001</h5>
+          <p id="clock">10:23:46, 13/02/2001</p>
 
-          <p unit="°C" id="dataTemp">31</p>
+          <h2 unit="°C" id="dataTemp">31</h2>
         </article>
 
         <article class="main__icon">
-          <img
-            src="assets/v02/weathers/_thunderstorm.svg"
-            alt="weather-icon"
-            id="weaterIcon"
-          />
+          <picture>
+            <img
+              src="assets/v02/weathers/_thunderstorm.svg"
+              alt="weather-icon"
+              width="300"
+              height="300"
+              id="weaterIcon"
+            />
+          </picture>
         </article>
       </main>
 
       <section class="section todayForecast">
         <header class="section__header">
-          <h4>Today's forecast</h4>
+          <h3>Today's forecast</h3>
         </header>
 
         <div class="section__content" id="todayForecastContent"></div>
@@ -77,28 +88,26 @@
       <section class="section conditions">
         <div class="section__content">
           <article class="condition">
-            <h5><i class="ri-drop-fill"></i> Humidity</h5>
+            <h4><i class="ri-drop-fill"></i> Humidity</h4>
             <p id="humidity">0%</p>
           </article>
           <article class="condition">
-            <h5><i class="ri-windy-line"></i> Wind speed</h5>
+            <h4><i class="ri-windy-line"></i> Wind speed</h4>
             <p id="wind">0 km/h</p>
           </article>
           <article class="condition">
-            <h5><i class="ri-thermometer-fill"></i> Feels like</h5>
+            <h4><i class="ri-thermometer-fill"></i> Feels like</h4>
             <p id="realFeel">0°C</p>
           </article>
 
           <article class="condition">
-            <h5><i class="ri-thermometer-fill"></i> Max/Min Temp</h5>
+            <h4><i class="ri-thermometer-fill"></i> Max/Min Temp</h4>
             <p id="maxminTemp">0/0°C</p>
           </article>
           <!-- <article class="condition">asd 4</article> -->
         </div>
       </section>
     </div>
-
-    <!-- <dialog id="alert">Lorem ipsum dolor sit amet.</dialog> -->
   </body>
 
   <script type="module" src="scripts/main.js"></script>

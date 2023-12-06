@@ -87,7 +87,6 @@ const weathers = [
 
 export async function getWeaterIcon(_weatherCode) {
 
-  console.log('_weatherCode', _weatherCode)
 
   const foundWeather = weathers.find((weather) =>
     weather.code.includes(_weatherCode)

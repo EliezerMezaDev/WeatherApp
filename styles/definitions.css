@@ -40,12 +40,24 @@ a {
 
   /* background: var(--c-main); */
 
-  background: rgb(145,161,255);
-background: linear-gradient(16deg, rgba(145,161,255,1) 0%, rgba(140,157,255,1) 100%);
+  background: rgb(145, 161, 255);
+  background: linear-gradient(
+    16deg,
+    rgba(145, 161, 255, 1) 0%,
+    rgba(140, 157, 255, 1) 100%
+  );
+
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.container-all::-webkit-scrollbar {
+  width: 0;
 }
 
 .section {
@@ -56,6 +68,12 @@ background: linear-gradient(16deg, rgba(145,161,255,1) 0%, rgba(140,157,255,1) 1
   background-color: var(--c-main-lite);
 
   box-shadow: 0px 2px 15px -4px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 1024px) {
+  .section {
+    width: 100%;
+  }
 }
 
 .section .section__header {

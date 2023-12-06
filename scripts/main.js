@@ -14,8 +14,6 @@ async function checkWeater(_city) {
     currentWeatherData.main.temp
   );
 
-  console.log('currentWeatherData', currentWeatherData)
-
   document.querySelector("#humidity").innerHTML =
     Math.round(currentWeatherData.main.humidity) + "%";
   document.querySelector("#wind").innerHTML =
@@ -23,11 +21,9 @@ async function checkWeater(_city) {
   document.querySelector("#realFeel").innerHTML =
     Math.round(currentWeatherData.main.feels_like) + " °C";
 
-    document.querySelector("#maxminTemp").innerHTML =
-
-    `${Math.round(currentWeatherData.main.temp_max)}/${Math.round(currentWeatherData.main.temp_min)} °C`;
-
-    
+  document.querySelector("#maxminTemp").innerHTML = `${Math.round(
+    currentWeatherData.main.temp_max
+  )}/${Math.round(currentWeatherData.main.temp_min)} °C`;
 
   document.querySelector("#weaterIcon").src = await getWeaterIcon(
     currentWeatherData.weather[0].icon
@@ -66,8 +62,6 @@ async function checkForecast(_city) {
 
 function generateForecastItems() {
   todayForecast.forEach(async (forecast) => {
-    console.log("forecast", forecast.weather[0].icon);
-
     const article = document.createElement("article");
     article.className = "forecast";
 
@@ -103,8 +97,6 @@ function generateForecastItems() {
 
   todayForecast.length = 0;
   weekForecast.length = 0;
-  // console.log("todayForecast", todayForecast);
-  // console.log("weekForecast", weekForecast);
 }
 
 /*

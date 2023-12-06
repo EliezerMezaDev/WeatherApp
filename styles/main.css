@@ -18,6 +18,13 @@
   gap: 0.5rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  .container-all.home {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /*
     ---- sidebar ----
 */
@@ -29,6 +36,12 @@
 
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 .sidebar .logo {
@@ -86,13 +99,25 @@
 .search {
   grid-area: search;
 
-  height: 100%;
+  height: 40px;
   padding: 0;
   background-color: transparent;
   box-shadow: none;
 
   display: flex;
   justify-content: flex-start;
+}
+
+@media only screen and (max-width: 1024px) {
+  .search {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search {
+    margin-top: 0;
+  }
 }
 
 .searchWrapper {
@@ -157,6 +182,12 @@
   justify-content: flex-start;
 }
 
+@media only screen and (max-width: 375px) {
+  .main__info {
+    width: 100%;
+  }
+}
+
 .main__info h1 {
   font-size: 4rem;
   font-weight: 600;
@@ -164,7 +195,13 @@
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.29);
 }
 
-.main__info h5 {
+@media only screen and (max-width: 600px) {
+  .main__info h1 {
+    font-size: 3rem;
+  }
+}
+
+.main__info p {
   font-size: 1rem;
   font-weight: 500;
   margin-top: -0.75rem;
@@ -174,7 +211,7 @@
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.29);
 }
 
-.main__info p {
+.main__info h2 {
   position: relative;
 
   width: max-content;
@@ -185,13 +222,19 @@
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.29);
 }
 
-.main__info p::after {
+.main__info h2::after {
   position: absolute;
   content: attr(unit);
-  top: 0;
-  right: -1.75rem;
+  top: 0.5rem;
+  right: -2rem;
 
   font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .main__info h2 {
+    font-size: 3rem;
+  }
 }
 
 .main__icon {
@@ -204,10 +247,25 @@
 .main__icon img {
   height: 100%;
   border-radius: 100%;
+
+  max-width: 300px;
+  max-height: 300px;
   /* border: 1px solid var(--c-white-o80); */
   /* background-color: var(--c-white-o80); */
 
   aspect-ratio: 1/1;
+}
+
+@media only screen and (max-width: 768px) {
+  .main__icon img {
+    max-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main__icon {
+    display: none;
+  }
 }
 
 /*
@@ -228,9 +286,23 @@
 .todayForecast .section__content {
   height: 100%;
   padding: 0;
+  padding-bottom: 0.25rem;
 
   display: flex;
   align-items: center;
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.todayForecast .section__content::-webkit-scrollbar {
+  height: 1px;
+  background-color: transparent;
+}
+
+.todayForecast .section__content::-webkit-scrollbar-thumb {
+  height: 1px;
+  background-color: var(--c-white-o80);
 }
 
 .forecast {
@@ -296,6 +368,15 @@
   gap: 1rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  .conditions .section__content {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+  }
+}
+
 .conditions .condition {
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -306,9 +387,21 @@
   box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.1);
 }
 
-.conditions .condition h5 {
+@media only screen and (max-width: 1024px) {
+  .conditions .condition {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.conditions .condition h4 {
   font-weight: 500;
   font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .conditions .condition h4 {
+    font-size: 0.75rem;
+  }
 }
 
 .conditions .condition p {
@@ -320,4 +413,11 @@
   color: var(--c-white);
 
   line-height: 1;
+}
+
+@media only screen and (max-width: 1024px) {
+  .conditions .condition p {
+    text-align: left;
+    font-size: 1.25rem;
+  }
 }
