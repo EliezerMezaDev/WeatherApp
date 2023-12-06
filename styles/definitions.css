@@ -52,13 +52,13 @@ a {
   border-radius: 0.5rem;
   background-color: var(--c-main-lite);
 
-  box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 15px -4px rgba(0, 0, 0, 0.1);
 }
 
 .section .section__header {
   width: 100%;
 
-  color: var(--c-white-o50);
+  color: var(--c-white-o80);
   font-weight: 500;
 
   display: flex;
