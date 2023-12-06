@@ -38,7 +38,10 @@ a {
   height: 100vh;
   padding: 1rem;
 
-  background: var(--c-main);
+  /* background: var(--c-main); */
+
+  background: rgb(145,161,255);
+background: linear-gradient(16deg, rgba(145,161,255,1) 0%, rgba(140,157,255,1) 100%);
 
   display: flex;
   align-items: center;
