@@ -5,58 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/definitions.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container-all">
-      <main class="app">
-        <div class="app__searchbar">
+    <div class="container-all home">
+      <aside class="section sidebar">
+        <span class="logo">
+          <i class="ri-cloud-windy-fill icon"></i>
+        </span>
+
+        <nav class="navigation">
+          <li>
+            <a href="#">
+              <i class="ri-home-2-fill icon"></i>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#">
+              <i class="ri-calendar-fill icon"></i>
+            </a>
+          </li> -->
+        </nav>
+      </aside>
+
+      <section class="section search">
+        <span class="searchWrapper">
           <input
-            id="inputForm"
             type="text"
-            placeholder="type city name..."
+            placeholder="search by city..."
+            id="searchInput"
             spellcheck="false"
           />
+          <i class="ri-search-line" id="searchButton"></i>
+        </span>
+      </section>
 
-          <button id="buttonForm">
-            <img src="images/search.png" alt="icon-search.png" />
-          </button>
-        </div>
+      <main class="section main">
+        <article class="main__info">
+          <h1 id="dataCity">City name</h1>
+          <h5 id="clock">10:23:46, 13/02/2001</h5>
 
-        <section class="weather">
+          <p unit="°C" id="dataTemp">31</p>
+        </article>
+
+        <article class="main__icon">
           <img
-            src="images/rain.png"
-            alt="weater-icon.png"
-            class="weather__icon"
+            src="assets/v02/weathers/_thunderstorm.svg"
+            alt="weather-icon"
             id="weaterIcon"
           />
-
-          <h1 class="weather__temp" id="temp">22°C</h1>
-          <h2 class="weather__city" id="city">New York</h2>
-
-          <div class="weather__details">
-            <div class="col">
-              <img src="images/humidity.png" alt="humidity.png" />
-
-              <div>
-                <label class="humidity" id="humidity">50%</label>
-                <p>Humidity</p>
-              </div>
-            </div>
-
-            <div class="col">
-              <img src="images/wind.png" alt="wind.png" />
-
-              <div>
-                <label class="wind" id="wind">15 km/h</label>
-                <p>Wind Speed</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        </article>
       </main>
+
+      <section class="section todayForecast">
+        <header class="section__header" role="heading">
+          <h4>Today's forecast</h4>
+        </header>
+
+        <div class="section__content" id="todayForecastContent"></div>
+      </section>
+
+      <section class="section conditions">
+        <div class="section__content">
+          <article class="condition">
+            <h5><i class="ri-drop-fill"></i> Humidity</h5>
+            <p id="humidity">0%</p>
+          </article>
+          <article class="condition">
+            <h5><i class="ri-windy-line"></i> Wind speed</h5>
+            <p id="wind">0 km/h</p>
+          </article>
+          <article class="condition">
+            <h5><i class="ri-thermometer-fill"></i> Feels like</h5>
+            <p id="realFeel">0°C</p>
+          </article>
+
+          <article class="condition">
+            <h5><i class="ri-thermometer-fill"></i> Max/Min Temp</h5>
+            <p id="maxminTemp">0/0°C</p>
+          </article>
+          <!-- <article class="condition">asd 4</article> -->
+        </div>
+      </section>
     </div>
+
+    <dialog id="alert">Lorem ipsum dolor sit amet.</dialog>
   </body>
 
-  <script src="main.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 </html>

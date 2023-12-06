@@ -1,0 +1,316 @@
+/* v02 */
+
+.container-all.home {
+  padding: 0.5rem;
+
+  display: grid;
+  grid-template-columns: 80px 2fr 200px;
+  grid-template-rows:
+    60px
+    2fr
+    1fr
+    2fr;
+  grid-template-areas:
+    "sidebar search conditions"
+    "sidebar main conditions"
+    "sidebar main conditions"
+    "sidebar todayForecast conditions";
+  gap: 0.5rem;
+}
+
+/*
+    ---- sidebar ----
+*/
+.sidebar {
+  grid-area: sidebar;
+
+  height: 100%;
+  padding: 0.25rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  width: 100%;
+  padding: 0.75rem;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .logo .icon {
+  font-size: 3rem;
+}
+
+.sidebar .navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.5rem;
+}
+
+.sidebar .navigation li a {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid var(--c-dist);
+  border-radius: 0.5rem;
+
+  background-color: none;
+
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .navigation li a .icon {
+  color: var(--c-white);
+  font-size: 1.5rem;
+
+  transition: 0.3s;
+}
+
+.sidebar .navigation li a:hover {
+  background-color: var(--c-dist);
+}
+
+/*
+    ---- search ----
+*/
+.search {
+  grid-area: search;
+
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchWrapper {
+  width: 100%;
+  height: 30px;
+  padding: 0 0.75rem;
+  border-radius: 10rem;
+
+  border: 1px solid transparent;
+
+  background-color: var(--c-main-lite);
+  box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchWrapper input {
+  background-color: transparent;
+
+  width: 100%;
+
+  font-size: 0.65rem;
+  color: var(--c-white);
+}
+
+.searchWrapper input::placeholder {
+  color: var(--c-white-o50);
+}
+
+.searchWrapper i {
+  font-size: 0.85rem;
+  color: var(--c-white);
+}
+
+/*
+    ---- main ----
+*/
+.main {
+  grid-area: main;
+  position: relative;
+
+  height: 100%;
+  padding-left: 0.5rem;
+
+  box-shadow: none;
+  background-color: transparent;
+
+  display: flex;
+}
+
+.main__info {
+  width: 50%;
+
+  color: var(--c-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main__info h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.main__info h5 {
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  color: var(--c-white-o50);
+}
+
+.main__info p {
+  position: relative;
+
+  width: max-content;
+  margin-top: 1rem;
+
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.main__info p::after {
+  position: absolute;
+  content: attr(unit);
+  top: 0;
+  right: -1.75rem;
+
+  font-size: 1.5rem;
+}
+
+.main__icon {
+  width: 50%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main__icon img {
+  height: 100%;
+  border-radius: 100%;
+  /* border: 1px solid var(--c-white-o50); */
+  /* background-color: var(--c-white-o50); */
+
+  aspect-ratio: 1/1;
+}
+
+/*
+    ---- today's forecast ----
+*/
+.todayForecast {
+  grid-area: todayForecast;
+
+  height: 100%;
+
+  /* overflow: hidden; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.todayForecast .section__content {
+  height: 100%;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.forecast {
+  height: max-content;
+  padding: 0.75rem 1.25rem;
+  border-right: 1px solid var(--c-white-o50);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast:last-child {
+  border: none;
+}
+
+.forecast .forecast__title {
+  font-size: 0.75rem;
+
+  color: var(--c-white-o50);
+}
+
+.forecast .forecast__icon {
+  width: 50px;
+}
+
+.forecast .forecast__temp {
+  position: relative;
+  margin-left: -0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  color: var(--c-white);
+}
+
+.forecast .forecast__temp::after {
+  position: absolute;
+  content: attr(unit);
+  top: 0;
+  right: -0.85rem;
+
+  font-size: 0.65rem;
+}
+
+/*
+    ---- conditions ----
+*/
+.conditions {
+  grid-area: conditions;
+
+  padding: 0;
+
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.conditions .section__content {
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-content: flex-start;
+  gap: 1rem;
+}
+
+.conditions .condition {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+  color: var(--c-white-o50);
+
+  background-color: var(--c-main-lite);
+}
+
+.conditions .condition h5 {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.conditions .condition p {
+  text-align: right;
+  margin-top: 0.75rem;
+
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--c-white);
+
+  line-height: 1;
+}
